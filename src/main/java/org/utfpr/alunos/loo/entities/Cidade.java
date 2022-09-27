@@ -42,7 +42,8 @@ public class Cidade extends Entidade {
         return uf;
     }
 
-    public void setUf(String uf) {
+    public void setUf(String uf) throws InvalidValueExeption {
+        Estado.valida(uf);
         this.uf = uf;
     }
 
@@ -61,7 +62,4 @@ public class Cidade extends Entidade {
     public void setLojas(List<Loja> lojas) {
         this.lojas = lojas;
     }
-    
-    
-
 }
