@@ -1,5 +1,7 @@
 package org.utfpr.alunos.loo.entities;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -23,11 +25,12 @@ public class ItemSaida extends Entidade {
     @Column(precision = 2)
     @NotNull
     @Size(min = 0)
-    private Float valor;
+    private BigDecimal valor;
     @ManyToOne
     private Produto produto;
     @ManyToOne
     private Saida saida;
+    
     public String getLote() {
         return lote;
     }
@@ -40,10 +43,10 @@ public class ItemSaida extends Entidade {
     public void setQtde(Integer qtde) {
         this.qtde = qtde;
     }
-    public Float getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
-    public void setValor(Float valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
     public Produto getProduto() {

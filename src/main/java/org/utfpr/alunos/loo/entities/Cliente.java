@@ -29,8 +29,10 @@ public class Cliente extends Entidade{
 
     @Size(max = 14)
     private String cpf;
+
     @OneToMany(mappedBy = "cliente")
     private List<Saida> saidas;
+    
     public String getNome() {
         return nome;
     }

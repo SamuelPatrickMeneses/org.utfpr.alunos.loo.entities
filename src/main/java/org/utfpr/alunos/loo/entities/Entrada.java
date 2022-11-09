@@ -1,5 +1,6 @@
 package org.utfpr.alunos.loo.entities;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,14 +21,14 @@ public class Entrada extends Entidade {
     private LocalDate dataEntrada;
     @NotNull
     @Column(precision = 2)
-    private Float total;
+    private BigDecimal total;
     @Size(max = 45)
     @NotNull
     @NotEmpty
     private String numNotaFiscal;
     @NotNull
     @Column(precision = 2)
-    private Float imposto;
+    private BigDecimal imposto;
 
     @OneToMany(mappedBy = "entrada")
     private List<ItemEntrada> itemEntrada;
@@ -45,16 +46,16 @@ public class Entrada extends Entidade {
     public void setNumNotaFiscal(String numNotaFiscal) {
         this.numNotaFiscal = numNotaFiscal;
     }
-    public Float getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
-    public void setTotal(Float total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
-    public Float getImposto() {
+    public BigDecimal getImposto() {
         return imposto;
     }
-    public void setImposto(Float imposto) {
+    public void setImposto(BigDecimal imposto) {
         this.imposto = imposto;
     }
     public List<ItemEntrada> getItemEntrada() {

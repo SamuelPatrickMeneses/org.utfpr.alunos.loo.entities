@@ -1,5 +1,6 @@
 package org.utfpr.alunos.loo.entities;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -16,11 +17,11 @@ public class Saida extends Entidade{
     
     @NotNull
     @Column(precision = 2)
-    private Float total;
+    private BigDecimal total;
 
     @NotNull
     @Column(precision = 2)
-    private Float inposto;
+    private BigDecimal inposto;
     @NotNull
     @ManyToOne
     @Column(name = "id_funcionario")
@@ -34,16 +35,16 @@ public class Saida extends Entidade{
     @OneToMany(mappedBy = "saida")
     private List<ItemSaida> itemSaida;
 
-    public Float getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
-    public void setTotal(Float total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
-    public Float getInposto() {
+    public BigDecimal getInposto() {
         return inposto;
     }
-    public void setInposto(Float inposto) {
+    public void setInposto(BigDecimal inposto) {
         this.inposto = inposto;
     }
     public List<ItemSaida> getItemSaida() {
